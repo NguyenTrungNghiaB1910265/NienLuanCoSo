@@ -44,7 +44,7 @@ s@extends('admin_layout')
               </label>
             </th>
             <th>Tên thương hiệu</th>
-            <th>Kích hoạt/Vô hiệu hóa</th>
+            <th>Trạng thái</th>
             <th style="width:30px;"></th>
           </tr>
         </thead>

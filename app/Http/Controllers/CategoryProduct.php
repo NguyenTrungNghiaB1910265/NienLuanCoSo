@@ -12,7 +12,7 @@ session_start();
 class CategoryProduct extends Controller
 {
 
-    // Kiem tra nguoi dung da dang nhap chua
+    // Chung thuc nguoi dung da dang nhap chua
     public function AuthLogin() {
         $admin_id = Session::get('admin_id');
         if ($admin_id) {
@@ -53,14 +53,14 @@ class CategoryProduct extends Controller
     public function active_category_product($category_product_id) {
         $this->AuthLogin();
         DB::table('tbl_category_product')->where('category_id', $category_product_id)->update(['category_status'=>1]);
-        Session::put('message','Vô hiệu hóa danh mục sản phẩm thành công');
+        Session::put('message','Kích hoạt danh mục sản phẩm thành công');
         return Redirect::to('all-category-product');
     }
 
     public function unactive_category_product($category_product_id) {
         $this->AuthLogin();
         DB::table('tbl_category_product')->where('category_id', $category_product_id)->update(['category_status'=>0]);
-        Session::put('message','Kích hoạt danh mục sản phẩm thành công');
+        Session::put('message','Vô hiệu hóa danh mục sản phẩm thành công');
         return Redirect::to('all-category-product');
     }
 
@@ -87,5 +87,16 @@ class CategoryProduct extends Controller
         Session::put('message','Xóa danh mục sản phẩm thành công');
         return Redirect::to('all-category-product');
     }
+
+    // End function of Admin Page
+
+    public function show_category_home($category_id) {
+        $cate_product = DB::table('tbl_category_product')->where('category_status','1')->orderby('category_id','desc')->get();
+        $brand_product = DB::table('tbl_brand')->where('brand_status','1')->orderby('brand_id','desc')->get();
+        $category_by_id = DB::table('tbl_product')->join('tbl_category_product','tbl_product.category_id','=','tbl_category_product.category_id')->where('tbl_category_product.category_id',$category_id)->get();
+        $category_name = DB::table('tbl_category_product')->where('tbl_category_product.category_id',$category_id)->limit(1)->get();
+        return view('pages.category.show_category')->with('category',$cate_product)->with('brand',$brand_product)->with('category_by_id',$category_by_id)->with('category_name',$category_name);
+    }
+
 
 }

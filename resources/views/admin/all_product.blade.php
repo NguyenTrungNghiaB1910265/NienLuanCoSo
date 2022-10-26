@@ -48,7 +48,7 @@ s@extends('admin_layout')
             <th>Hình sản phẩm</th>
             <th>Danh mục</th>
             <th>Thương hiệu</th>
-            <th>Kích hoạt/Vô hiệu hóa</th>
+            <th>Trạng thái</th>
             <th style="width:30px;"></th>
           </tr>
         </thead>

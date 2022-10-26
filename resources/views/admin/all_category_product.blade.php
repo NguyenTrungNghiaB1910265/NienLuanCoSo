@@ -44,7 +44,7 @@ s@extends('admin_layout')
               </label>
             </th>
             <th>Tên danh mục</th>
-            <th>Kích hoạt/Vô hiệu hóa</th>
+            <th>Trạng thái</th>
             <th style="width:30px;"></th>
           </tr>
         </thead>
@@ -57,9 +57,9 @@ s@extends('admin_layout')
                 <td>{{ $cate_pro->category_name }}</td>
                 <td><span class="text-ellipsis">
                     <?php if($cate_pro->category_status==1) {?>
-                      <a href="{{URL::to('/active-category-product/'.$cate_pro->category_id)}}"><span class="fa-thumb-styling fa fa-thumbs-up"></span></a>
+                      <a href="{{URL::to('/unactive-category-product/'.$cate_pro->category_id)}}"><span class="fa-thumb-styling fa fa-thumbs-up"></span></a>
                     <?php } else {?>
-                      <a href="{{URL::to('/unactive-category-product/'.$cate_pro->category_id)}}"><span class="fa-thumb-styling fa fa-thumbs-down"></span></a>
+                      <a href="{{URL::to('/active-category-product/'.$cate_pro->category_id)}}"><span class="fa-thumb-styling fa fa-thumbs-down"></span></a>
                     <?php } ?>
                 </span></td>
                 <td>
