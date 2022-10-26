@@ -20,6 +20,9 @@ Route::get('/trang-chu', 'Homecontroller@index');
 Route::get('/danh-muc-san-pham/{category_id}', 'CategoryProduct@show_category_home');
 Route::get('/thuong-hieu-san-pham/{brand_id}', 'BrandProduct@show_brand_home');
 
+// Detail Product
+Route::get('/chi-tiet-san-pham/{product_id}', 'ProductController@details_product');
+
 // Backend
 Route::get('/admin','AdminController@index');
 Route::get('/dashboard','AdminController@show_dashboard');

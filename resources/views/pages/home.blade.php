@@ -17,6 +17,7 @@
                         <div class="overlay-content">
                             <h4>{{$product->product_name}}</h4>
                             <h2>{{number_format($product->product_price).' VNĐ'}}</h2>
+                            <a href="{{URL::to('/chi-tiet-san-pham/'.$product->product_id)}}" class="btn btn-default add-to-cart">Xem chi tiết</a>
                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
                         </div>
                     </div>
