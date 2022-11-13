@@ -49,6 +49,7 @@ s@extends('admin_layout')
             <th>Danh mục</th>
             <th>Thương hiệu</th>
             <th>Trạng thái</th>
+            <th>Mô tả</th>
             <th style="width:30px;"></th>
           </tr>
         </thead>
@@ -77,6 +78,7 @@ s@extends('admin_layout')
                   <i class="fa fa-times text-danger text"></i></a>
                 
                 </td>
+                <td>{{ $pro->product_desc }}</td>
             </tr>
             @endforeach
 

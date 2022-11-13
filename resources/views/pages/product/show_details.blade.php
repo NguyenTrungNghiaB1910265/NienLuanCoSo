@@ -37,15 +37,21 @@
 								<h2>{{$value->product_name}}</h2>
 								<p>ID: {{$value->product_id}}</p>
 								<img src="images/product-details/rating.png" alt="" />
-								<span>
-									<span>{{number_format($value->product_price).' VNĐ'}}</span>
-									<label>Số lượng:</label>
-									<input type="number" min="1" value="1" />
-									<button type="button" class="btn btn-fefault cart">
-										<i class="fa fa-shopping-cart"></i>
-										Thêm vào giỏ
-									</button>
-								</span>
+
+								<form action="{{URL::to('/save-cart')}}" method="POST">
+									{{ csrf_field() }}
+									<span>
+										<span>{{number_format($value->product_price).' VNĐ'}}</span>
+										<label>Số lượng:</label>
+										<input name="quantity" type="number" min="1" value="1" />
+										<input name="product_id_hidden" type="hidden" value="{{$value->product_id}}" />
+										<button type="submit" class="btn btn-fefault cart">
+											<i class="fa fa-shopping-cart"></i>
+											Thêm vào giỏ
+										</button>
+									</span>
+								</form>
+
 								<p><b>Tình trạng:</b> Còn hàng</p>
 								<p><b>Điều kiện:</b> Mới 100%</p>
                                 <p><b>Danh mục:</b> {{$value->category_name}}</p>
@@ -107,52 +113,37 @@
 @endforeach
 
                     <div class="recommended_items"><!--recommended_items-->
-						<h2 class="title text-center">Sản phẩm gợi ý</h2>
+						<h2 class="title text-center">Sản phẩm liên quan</h2>
 						
 						<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
 							<div class="carousel-inner">
-								<div class="item active">	
-									<div class="col-sm-4">
+								<div class="item active">
+									@foreach($relate as $key => $relation)
+									<div class="col-sm-3">
 										<div class="product-image-wrapper">
 											<div class="single-products">
 												<div class="productinfo text-center">
-													<img src="{{URL::to('public/frontend/images/recommend1.jpg')}}" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
+													<img src="{{URL::to('public/uploads/product/'.$relation->product_image)}}" alt="" />
+													<h4>{{$relation->product_name}}</h4>
+													<h2>{{number_format($relation->product_price).' VNĐ'}}</h2>
+													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
 												</div>
-											</div>
-										</div>
-									</div>
-                                    <div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="{{URL::to('public/frontend/images/recommend2.jpg')}}" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
+												<div class="product-overlay">
+													<div class="overlay-content">
+														<h4>{{$relation->product_name}}</h4>
+														<h2>{{number_format($relation->product_price).' VNĐ'}}</h2>
+														<a href="{{URL::to('/chi-tiet-san-pham/'.$relation->product_id)}}" class="btn btn-default add-to-cart">Xem chi tiết</a>
+														<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
+													</div>
 												</div>
+                </div>
 											</div>
-										</div>
 									</div>
-                                    <div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="{{URL::to('public/frontend/images/recommend3.jpg')}}" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
-												</div>
-											</div>
-										</div>
-									</div>
-									
+                                    @endforeach
 								</div>
 
                                 <div class="item">	
-									<div class="col-sm-4">
+									<div class="col-sm-3">
 										<div class="product-image-wrapper">
 											<div class="single-products">
 												<div class="productinfo text-center">
@@ -164,30 +155,7 @@
 											</div>
 										</div>
 									</div>
-                                    <div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="{{URL::to('public/frontend/images/recommend2.jpg')}}" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
-												</div>
-											</div>
-										</div>
-									</div>
-                                    <div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="{{URL::to('public/frontend/images/recommend3.jpg')}}" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
-												</div>
-											</div>
-										</div>
-									</div>
+                                    
 									
 								</div>
 								

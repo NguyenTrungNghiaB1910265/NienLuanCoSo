@@ -13,10 +13,7 @@
     <link href="{{asset('public/frontend/css/animate.css')}}" rel="stylesheet">
 	<link href="{{asset('public/frontend/css/main.css')}}" rel="stylesheet">
 	<link href="{{asset('public/frontend/css/responsive.css')}}" rel="stylesheet">
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->       
+     
     <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
@@ -89,7 +86,7 @@
 								<li><a href="#"><i class="fa fa-user"></i> Account</a></li>
 								<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
 								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a href="{{URL::to('/show-cart')}}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 								<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
 							</ul>
 						</div>
@@ -151,38 +148,38 @@
 						<div class="carousel-inner">
 							<div class="item active">
 								<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
-									<h2>Free E-Commerce Template</h2>
+									<h1><span>N</span>-SHOP</h1>
+									<h2>Quảng cáo 1</h2>
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 									<button type="button" class="btn btn-default get">Get it now</button>
 								</div>
 								<div class="col-sm-6">
-									<img src="{{('public/frontend/images/girl1.jpg')}}" class="girl img-responsive" alt="" />
+									<img src="{{('public/frontend/images/iphone-14-pro-max-bac-thumb-600x600 (1).jpg')}}" class="girl img-responsive" alt="" />
 									<img src="{{('public/frontend/images/pricing.png')}}"  class="pricing" alt="" />
 								</div>
 							</div>
 							<div class="item">
 								<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
-									<h2>100% Responsive Design</h2>
+									<h1><span>N</span>-SHOP</h1>
+									<h2>Quảng cáo 2</h2>
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 									<button type="button" class="btn btn-default get">Get it now</button>
 								</div>
 								<div class="col-sm-6">
-									<img src="{{{'images/girl2.jpg'}}}" class="girl img-responsive" alt="" />
+									<img src="{{{'public/frontend/images/iphone-14-pro-max-bac-thumb-600x600 (1).jpg'}}}" class="girl img-responsive" alt="" />
 									<img src="{{{'images/pricing.png'}}}"  class="pricing" alt="" />
 								</div>
 							</div>
 							
 							<div class="item">
 								<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
-									<h2>Free Ecommerce Template</h2>
+									<h1><span>N</span>-SHOP</h1>
+									<h2>Quảng cáo 3</h2>
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 									<button type="button" class="btn btn-default get">Get it now</button>
 								</div>
 								<div class="col-sm-6">
-									<img src="{{{'images/girl3.jpg'}}}" class="girl img-responsive" alt="" />
+									<img src="{{{'public/frontend/images/iphone-14-pro-max-bac-thumb-600x600 (1).jpg'}}}" class="girl img-responsive" alt="" />
 									<img src="{{{'images/pricing.png'}}}" class="pricing" alt="" />
 								</div>
 							</div>
