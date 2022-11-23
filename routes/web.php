@@ -15,6 +15,7 @@
 // Fontend
 Route::get('/','HomeController@index');
 Route::get('/trang-chu', 'Homecontroller@index');
+Route::post('/search', 'Homecontroller@search');
 
 // Trang chu -> danh muc san pham
 Route::get('/danh-muc-san-pham/{category_id}', 'CategoryProduct@show_category_home');
@@ -70,3 +71,13 @@ Route::post('/save-cart','CartController@save_cart');
 Route::post('/update-cart','CartController@update_cart');
 Route::get('/show-cart','CartController@show_cart');
 Route::get('/delete-to-cart/{rowId}','CartController@delete_to_cart');
+
+// Checkout
+Route::get('/login-checkout','CheckoutController@login_checkout');
+Route::get('/logout-checkout','CheckoutController@logout_checkout');
+Route::get('/checkout','CheckoutController@checkout');
+Route::get('/payment','CheckoutController@payment');
+Route::post('/add-customer','CheckoutController@add_customer');
+Route::post('/save-checkout-customer','CheckoutController@save_checkout_customer');
+Route::post('/login-customer','CheckoutController@login_customer');
+Route::post('/order-place','CheckoutController@order_place');
