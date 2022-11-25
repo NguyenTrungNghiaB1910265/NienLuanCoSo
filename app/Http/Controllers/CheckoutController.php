@@ -13,10 +13,11 @@ session_start();
 class CheckoutController extends Controller
 {
     public function login_checkout() {
+        $meta_title = "Đăng nhập";
         $cate_product = DB::table('tbl_category_product')->where('category_status','1')->orderby('category_id','desc')->get();
         $brand_product = DB::table('tbl_brand')->where('brand_status','1')->orderby('brand_id','desc')->get();
 
-        return view('pages.checkout.login_checkout')->with('category',$cate_product)->with('brand',$brand_product); 
+        return view('pages.checkout.login_checkout')->with('category',$cate_product)->with('brand',$brand_product)->with('meta_title', $meta_title); 
     }
 
     public function add_customer(Request $request) {
@@ -33,10 +34,10 @@ class CheckoutController extends Controller
     }
 
     public function checkout() {
-        
+        $meta_title = "Thanh toán";
         $cate_product = DB::table('tbl_category_product')->where('category_status','1')->orderby('category_id','desc')->get();
         $brand_product = DB::table('tbl_brand')->where('brand_status','1')->orderby('brand_id','desc')->get();
-        return view('pages.checkout.show_checkout')->with('category',$cate_product)->with('brand',$brand_product);
+        return view('pages.checkout.show_checkout')->with('category',$cate_product)->with('brand',$brand_product)->with('meta_title', $meta_title);
     }
 
     public function save_checkout_customer(Request $request) {
@@ -53,9 +54,10 @@ class CheckoutController extends Controller
     }
 
     public function payment() {
+        $meta_title = "Payment";
         $cate_product = DB::table('tbl_category_product')->where('category_status','1')->orderby('category_id','desc')->get();
         $brand_product = DB::table('tbl_brand')->where('brand_status','1')->orderby('brand_id','desc')->get();
-        return view('pages.checkout.payment')->with('category',$cate_product)->with('brand',$brand_product);
+        return view('pages.checkout.payment')->with('category',$cate_product)->with('brand',$brand_product)->with('meta_title', $meta_title);
     }
 
     public function logout_checkout() {
@@ -76,6 +78,7 @@ class CheckoutController extends Controller
     }
 
     public function order_place(Request $request) {
+        $meta_title = "Payment";
         // $content = Cart::content();
         // echo $content;
         // Insert tbl_payment
@@ -110,7 +113,7 @@ class CheckoutController extends Controller
             Cart::destroy();
             $cate_product = DB::table('tbl_category_product')->where('category_status','1')->orderby('category_id','desc')->get();
             $brand_product = DB::table('tbl_brand')->where('brand_status','1')->orderby('brand_id','desc')->get();
-            return view('pages.checkout.handcash')->with('category',$cate_product)->with('brand',$brand_product);
+            return view('pages.checkout.handcash')->with('category',$cate_product)->with('brand',$brand_product)->with('meta_title', $meta_title);
         } else {
             echo "Paypal";
         }

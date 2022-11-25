@@ -136,6 +136,7 @@ class ProductController extends Controller
     // End function of Admin Page
 
     public function details_product($product_id) {
+        $meta_title = "Chi tiết sản phẩm | N-SHOP";
         $cate_product = DB::table('tbl_category_product')->where('category_status','1')->orderby('category_id','desc')->get();
         $brand_product = DB::table('tbl_brand')->where('brand_status','1')->orderby('brand_id','desc')->get();
         $details_product = DB::table('tbl_product')
@@ -156,7 +157,7 @@ class ProductController extends Controller
             ->with('category',$cate_product)
             ->with('brand',$brand_product)
             ->with('product_details',$details_product)
-            ->with('relate',$related_product);
+            ->with('relate',$related_product)->with('meta_title',$meta_title);
     }
 
 

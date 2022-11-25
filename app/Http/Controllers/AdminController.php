@@ -23,12 +23,14 @@ class AdminController extends Controller
     }
 
     public function index() {
-        return view('admin_login');
+        $meta_title = "Admin | N-SHOP";
+        return view('admin_login')->with('meta_title',$meta_title);
     }
 
     public function show_dashboard() {
         $this->AuthLogin();
-        return view('admin.dashboard');
+        $meta_title = "Home | N-SHOP";
+        return view('admin.dashboard')->with('meta_title',$meta_title);
     }
 
     public function dashboard(Request $request) {

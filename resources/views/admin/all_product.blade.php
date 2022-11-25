@@ -1,4 +1,4 @@
-s@extends('admin_layout')
+@extends('admin_layout')
 @section('admin_content')
 
 <div class="table-agile-info">
@@ -71,14 +71,16 @@ s@extends('admin_layout')
                       <a href="{{URL::to('/active-product/'.$pro->product_id)}}"><span class="fa-thumb-styling fa fa-thumbs-down"></span></a>
                     <?php } ?>
                 </span></td>
+                <td>{{ $pro->product_desc }}</td>
                 <td>
+                  
                 <a href="{{URL::to('/edit-product/'.$pro->product_id)}}" class="active styling-edit" ui-toggle-class="">
                   <i class="fa fa-pencil-square-o text-success text-active"></i></a>
                 <a href="{{URL::to('/delete-product/'.$pro->product_id)}}" onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này?')" class="active styling-edit" ui-toggle-class="">
                   <i class="fa fa-times text-danger text"></i></a>
                 
                 </td>
-                <td>{{ $pro->product_desc }}</td>
+                
             </tr>
             @endforeach
 

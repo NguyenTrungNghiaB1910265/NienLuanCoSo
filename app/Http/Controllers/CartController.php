@@ -33,9 +33,10 @@ class CartController extends Controller
     }
 
     public function show_cart() {
+        $meta_title = "Giỏ hàng | N-SHOP";
         $cate_product = DB::table('tbl_category_product')->where('category_status','1')->orderby('category_id','desc')->get();
         $brand_product = DB::table('tbl_brand')->where('brand_status','1')->orderby('brand_id','desc')->get();
-        return view('pages.cart.show_cart')->with('category',$cate_product)->with('brand',$brand_product);
+        return view('pages.cart.show_cart')->with('category',$cate_product)->with('brand',$brand_product)->with('meta_title',$meta_title);
     }
 
     public function delete_to_cart($rowId) {

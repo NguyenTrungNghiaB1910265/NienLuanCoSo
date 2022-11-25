@@ -27,7 +27,8 @@
                     <form action="{{URL::to('/add-customer')}}" method="POST"> {{ csrf_field() }}
                         <input type="text" name="customer_name" placeholder="Họ tên"/>
                         <input type="email" name="customer_email" placeholder="Địa chỉ email"/>
-                        <input type="password" name="customer_password" placeholder="Mật khẩu"/>
+                        <input type="password" name="customer_password" placeholder="Mật khẩu" data-validation="length" data-validation-length="min7"/>
+                        <input type="password" name="repeat" placeholder="Nhập lại mật khẩu" data-validation="confirmation" data-validation-confirm="customer_password"/>
                         <input type="text" name="customer_phone" placeholder="Số điện thoại"/>
                         <button type="submit" class="btn btn-default">Đăng ký</button>
                     </form>

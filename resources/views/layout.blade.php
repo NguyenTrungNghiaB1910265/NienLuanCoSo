@@ -4,8 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="robots" content="">
     <meta name="author" content="">
-    <title>Home | N-Shop</title>
+	<link rel="canonical" href="http://localhost/ct271/trang-chu" />
+	<link rel="icon" type="imgae/x-icon" href="" />
+    <title>{{$meta_title}}</title>
     <link href="{{asset('public/frontend/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('public/frontend/css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('public/frontend/css/prettyPhoto.css')}}" rel="stylesheet">
@@ -131,7 +135,7 @@
 								<li><a href="{{URL::to('/trang-chu')}}" class="active">Trang chủ</a></li>
 								<li class="dropdown"><a href="#">Sản phẩm<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html">Products</a></li>
+                                        <li><a href="{{URL::to('/trang-chu')}}">Sản phẩm mới</a></li>
 										
                                     </ul>
                                 </li> 
@@ -248,13 +252,6 @@
 							</div>
 						</div><!--/brands_products-->
 						
-						<div class="price-range">
-							<h2>Mức giá</h2>
-							<div class="well text-center">
-								 <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
-								 <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
-							</div>
-						</div>
 						
 						<div class="shipping text-center">
 							<img src="{{{'images/shipping.jpg'}}}" alt="" />

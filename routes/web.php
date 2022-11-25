@@ -17,7 +17,7 @@ Route::get('/','HomeController@index');
 Route::get('/trang-chu', 'Homecontroller@index');
 Route::post('/search', 'Homecontroller@search');
 
-// Trang chu -> danh muc san pham
+// Trang chu
 Route::get('/danh-muc-san-pham/{category_id}', 'CategoryProduct@show_category_home');
 Route::get('/thuong-hieu-san-pham/{brand_id}', 'BrandProduct@show_brand_home');
 
@@ -85,3 +85,4 @@ Route::post('/order-place','CheckoutController@order_place');
 // Order
 Route::get('/manage-order','OrderController@manage_order');
 Route::get('/view-order/{orderId}','OrderController@view_order');
+Route::get('/confirm-order/{confirmId}','OrderController@confirm_order');

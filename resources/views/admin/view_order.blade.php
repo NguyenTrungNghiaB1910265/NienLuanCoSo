@@ -24,11 +24,14 @@
           </tr>
         </thead>
         <tbody>
+            @foreach($order_by_id as $order_value)
             <tr>
-                <td>{{ $order_by_id->customer_name }}</td>
-                <td>{{ $order_by_id->customer_email }}</td>
-                <td>{{ $order_by_id->customer_phone }}</td>
+                <td>{{ $order_value->customer_name }}</td>
+                <td>{{ $order_value->customer_email }}</td>
+                <td>{{ $order_value->customer_phone }}</td>
             </tr>
+            @break
+            @endforeach
         </tbody>
       </table>
     </div>
@@ -60,13 +63,16 @@
           </tr>
         </thead>
         <tbody>
+            @foreach($order_by_id as $order_value)
             <tr>
-                <td>{{ $order_by_id->shipping_name }}</td>
-                <td>{{ $order_by_id->shipping_email }}</td>
-                <td>{{ $order_by_id->shipping_address }}</td>
-                <td>{{ $order_by_id->shipping_phone }}</td>
-                <td>{{ $order_by_id->shipping_note }}</td>
+                <td>{{ $order_value->shipping_name }}</td>
+                <td>{{ $order_value->shipping_email }}</td>
+                <td>{{ $order_value->shipping_address }}</td>
+                <td>{{ $order_value->shipping_phone }}</td>
+                <td>{{ $order_value->shipping_note }}</td>
             </tr>
+            @break
+            @endforeach
         </tbody>
       </table>
     </div>
@@ -123,14 +129,16 @@
           </tr>
         </thead>
         <tbody>
+            @foreach($order_by_id as $order_value)
             <tr>
                 <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-                <td>{{ $order_by_id->product_name }}</td>
-                <td>{{ $order_by_id->product_sales_quantity }}</td>
-                <td>{{ $order_by_id->product_price }}</td>
-                <td>{{ $order_by_id->product_price*$order_by_id->product_sales_quantity }}</td>
-                <td>{{ $order_by_id->order_status }}</td>
+                <td>{{ $order_value->product_name }}</td>
+                <td>{{ $order_value->product_sales_quantity }}</td>
+                <td>{{ $order_value->product_price }}</td>
+                <td>{{ $order_value->product_price*$order_value->product_sales_quantity }}</td>
+                <td>{{ $order_value->order_status }}</td>
             </tr>
+            @endforeach
         </tbody>
       </table>
     </div>

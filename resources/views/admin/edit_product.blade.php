@@ -32,12 +32,12 @@
                                     <img src="{{URL::to('public/uploads/product/'.$pro->product_image)}}" height="100" width="100">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Mô tả sản phẩm</label>
-                                    <textarea style="resize: none" rows="8" class="form-control" name="product_desc" id="exampleInputPassword1" placeholder="Nhập mô tả sản phẩm">{{$pro->product_price}}</textarea>
+                                    <label for="exampleInputPassword1">Thông số kỹ thuật</label>
+                                    <textarea style="resize: none" rows="8" class="form-control" name="product_desc" id="ckeditor_desc_product" placeholder="Nhập mô tả sản phẩm">{{$pro->product_desc}}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Nội dung sản phẩm</label>
-                                    <textarea style="resize: none" rows="8" class="form-control" name="product_content" id="exampleInputPassword1" placeholder="Nhập nội dung sản phẩm">{{$pro->product_content}}</textarea>
+                                    <textarea style="resize: none" rows="8" class="form-control" name="product_content" id="ckeditor_content_product" placeholder="Nhập nội dung sản phẩm">{{$pro->product_content}}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Danh mục</label>
@@ -64,10 +64,10 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Hiển thị</label>
+                                    <label for="exampleInputPassword1">Trạng thái</label>
                                       <select name="product_status" class="form-control input-sm m-bot15">
-                                        <option value="0">Ẩn</option>
                                         <option value="1">Hiển thị</option>
+                                        <option value="0">Ẩn</option>
                                     </select>
                                 </div>
                                

@@ -58,7 +58,11 @@
                 <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
                 <td>{{ $order->customer_name }}</td>
                 <td>{{ $order->order_total }}</td>
-                <td>{{ $order->order_status }}</td>
+                @if($order->order_status=="Đang chờ xử lý")
+                <td><a href="{{URL::to('confirm-order/'.$order->order_id)}}" class="btn btn-primary">{{ $order->order_status }}</a></td>
+                @else
+                <td><a href="" class="btn btn-success">{{ $order->order_status }}</a></td>
+                @endif
                 <td>
                 <a href="{{URL::to('/view-order/'.$order->order_id)}}" class="active styling-edit" ui-toggle-class="">
                   <i class="fa fa-pencil-square-o text-success text-active"></i></a>
