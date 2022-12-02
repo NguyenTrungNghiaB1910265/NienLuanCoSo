@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Product;
+use App\Category;
+use App\Brand;
 use App\Http\Requests;
 use Session;
 use Illuminate\Support\Facades\Redirect;
@@ -17,7 +20,7 @@ class CartController extends Controller
         
         $productId = $request->product_id_hidden;
         $quantity = $request->quantity;
-        $product_info = DB::table('tbl_product')->where('product_id',$productId)->first();
+        $product_info = Product::where('product_id',$productId)->first();
 
         // Cart::add('293ad', 'Product 1', 1, 9.99, 550);
         $data['id'] = $productId;
@@ -34,8 +37,8 @@ class CartController extends Controller
 
     public function show_cart() {
         $meta_title = "Giỏ hàng | N-SHOP";
-        $cate_product = DB::table('tbl_category_product')->where('category_status','1')->orderby('category_id','desc')->get();
-        $brand_product = DB::table('tbl_brand')->where('brand_status','1')->orderby('brand_id','desc')->get();
+        $cate_product = Category::where('category_status','1')->orderby('category_id','desc')->get();
+        $brand_product = Brand::where('brand_status','1')->orderby('brand_id','desc')->get();
         return view('pages.cart.show_cart')->with('category',$cate_product)->with('brand',$brand_product)->with('meta_title',$meta_title);
     }
 

@@ -12,7 +12,7 @@
 
         
         <div class="review-payment">
-            <h2>Đơn hàng của bạn đã được đặt thành công. Cảm ơn bạn đã đặt hàng tại N-SHOP's website!</h2>
+            <h2 style="color: green;">Đơn hàng của bạn đã được đặt thành công. Cảm ơn bạn đã đặt hàng tại N-SHOP's website!</h2>
         </div>
        
 

@@ -26,6 +26,10 @@
                                         <input type="text"  class="form-control"  onkeyup="ChangeToSlug();" name="product_price"  id="slug" placeholder="Nhập giá sản phẩm" data-validation="length" data-validation-length="min1" data-validation-error-msg="Vui lòng điền giá sản phẩm">
                                     </div>
                                     <div class="form-group">
+                                        <label for="exampleInputEmail1">Số lượng sản phẩm</label>
+                                        <input type="text"  class="form-control"  onkeyup="ChangeToSlug();" name="product_quantity"  id="slug" placeholder="Nhập số lượng sản phẩm" data-validation="length" data-validation-length="min1" data-validation-error-msg="Vui lòng điền số lượng sản phẩm">
+                                    </div>
+                                    <div class="form-group">
                                         <label for="exampleInputEmail1">Hình ảnh sản phẩm</label>
                                         <input type="file" class="form-control" onkeyup="ChangeToSlug();" name="product_image"  id="slug" >
                                     </div>

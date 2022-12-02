@@ -131,6 +131,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                     </ul>
                 </li>
+                <!-- Tài khoản -->
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-book"></i>
+                        <span>Quản lý tài khoản</span>
+                    </a>
+                    <ul class="sub">
+						<li><a href="{{URL::to('/manage-customer')}}">Liệt kê tài khoản</a></li>
+
+                    </ul>
+                </li>
                 
             </ul>            
 		</div>
@@ -143,13 +154,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<section class="wrapper">
 		@yield('admin_content')
     </section>
- <!-- footer -->
-		  <div class="footer">
-			<div class="wthree-copyright">
-			  <p>© 2017 Visitors. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
-			</div>
-		  </div>
-  <!-- / footer -->
 </section>
 <!--main content end-->
 </section>

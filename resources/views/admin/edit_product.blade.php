@@ -27,6 +27,10 @@
                                     <input type="text"  class="form-control"  onkeyup="ChangeToSlug();" name="product_price"  id="slug" value="{{$pro->product_price}}">
                                 </div>
                                 <div class="form-group">
+                                        <label for="exampleInputEmail1">Số lượng sản phẩm</label>
+                                        <input type="text"  class="form-control"  onkeyup="ChangeToSlug();" name="product_quantity"  id="slug" value="{{$pro->product_quantity}}">
+                                </div>
+                                <div class="form-group">
                                     <label for="exampleInputEmail1">Hình ảnh sản phẩm</label>
                                     <input type="file"  class="form-control"  onkeyup="ChangeToSlug();" name="product_image"  id="slug">
                                     <img src="{{URL::to('public/uploads/product/'.$pro->product_image)}}" height="100" width="100">

@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
 
-<div class="features_items"><!--features_items-->
+<div class="features_items"  style="background-color:white;"><!--features_items-->
     <h2 class="title text-center">Sản phẩm mới nhất</h2>
     @foreach($all_product as $key => $product)
     <div class="col-sm-4">

@@ -43,9 +43,8 @@
                         <td class="cart_quantity" width="50">
                             <div class="cart_quantity_button">
                                 <form action="{{URL::to('/update-cart')}}" method="POST"> {{csrf_field()}}
-                                    <input class="cart_quantity_input" type="number" name="cart_quantity" value="{{$value->qty}}">
+                                    <p>{{$value->qty}}</p>
                                     <input type="hidden" value="{{$value->rowId}}" name="cart_rowId">
-                                    <button type="submit" value="Cap nhat" name="update_quantity" class="btn btn-default btn-sm">Cập nhật</button>
                                 </form>
                             </div>
                         </td>

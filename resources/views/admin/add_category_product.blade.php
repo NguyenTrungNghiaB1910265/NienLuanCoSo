@@ -2,7 +2,7 @@
 @section('admin_content')
 <div class="row">
             <div class="col-lg-12">
-                    <section class="panel">
+                    <section class="panel"  id="radius">
                         <header class="panel-heading">
                            Thêm danh mục sản phẩm
                         </header>

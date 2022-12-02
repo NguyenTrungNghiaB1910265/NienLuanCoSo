@@ -86,3 +86,10 @@ Route::post('/order-place','CheckoutController@order_place');
 Route::get('/manage-order','OrderController@manage_order');
 Route::get('/view-order/{orderId}','OrderController@view_order');
 Route::get('/confirm-order/{confirmId}','OrderController@confirm_order');
+// Customer Order
+Route::get('/login-order','OrderController@login_order');
+Route::get('/show-customer-order/{customerId}','OrderController@show_customer_order');
+Route::post('/login-customer-order','OrderController@login_customer_order');
+
+// Manage Customer
+Route::get('/manage-customer','AdminController@manage_customer');

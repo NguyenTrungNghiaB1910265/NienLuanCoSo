@@ -45,8 +45,9 @@
             </th>
             <th>Tên người đặt</th>
             <th>Tổng tiền</th>
+            <th>Thời gian đặt hàng</th>
             <th>Tình trạng đơn hàng</th>
-            <th>Hiển thị</th>
+            <th>Thao tác</th>
             <th style="width:30px;"></th>
           </tr>
         </thead>
@@ -58,6 +59,7 @@
                 <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
                 <td>{{ $order->customer_name }}</td>
                 <td>{{ $order->order_total }}</td>
+                <td>{{ $order->created_at }}</td>
                 @if($order->order_status=="Đang chờ xử lý")
                 <td><a href="{{URL::to('confirm-order/'.$order->order_id)}}" class="btn btn-primary">{{ $order->order_status }}</a></td>
                 @else
@@ -65,7 +67,7 @@
                 @endif
                 <td>
                 <a href="{{URL::to('/view-order/'.$order->order_id)}}" class="active styling-edit" ui-toggle-class="">
-                  <i class="fa fa-pencil-square-o text-success text-active"></i></a>
+                  <i class="fa fa-eye text-success text-active"></i></a>
                 <a href="{{URL::to('/delete-order/'.$order->order_id)}}" onclick="return confirm('Bạn có chắc muốn xóa đơn hàng này?')" class="active styling-edit" ui-toggle-class="">
                   <i class="fa fa-times text-danger text"></i></a>
                 </td>

@@ -59,6 +59,7 @@
             <th>Địa chỉ</th>
             <th>Số điện thoại</th>
             <th>Ghi chú</th>
+            <th>Tổng tiền</th>
             <th style="width:30px;"></th>
           </tr>
         </thead>
@@ -70,6 +71,7 @@
                 <td>{{ $order_value->shipping_address }}</td>
                 <td>{{ $order_value->shipping_phone }}</td>
                 <td>{{ $order_value->shipping_note }}</td>
+                <td>{{ $order_value->order_total }}</td>
             </tr>
             @break
             @endforeach
@@ -85,14 +87,7 @@
       Chi tiết đơn hàng
     </div>
     <div class="row w3-res-tb">
-      <div class="col-sm-5 m-b-xs">
-        <select class="input-sm form-control w-sm inline v-middle">
-          <option value="0">Bulk action</option>
-          <option value="1">Delete selected</option>
-          <option value="2">Bulk edit</option>
-          <option value="3">Export</option>
-        </select>
-        <button class="btn btn-sm btn-default">Apply</button>                
+      <div class="col-sm-5 m-b-xs">            
       </div>
       <div class="col-sm-4">
       </div>
